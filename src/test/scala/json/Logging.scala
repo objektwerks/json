@@ -2,7 +2,7 @@ package json
 
 import org.slf4j.LoggerFactory
 
-trait Common {
+trait Logging {
   val logger = LoggerFactory.getLogger(this.getClass)
 
   def log(name: Entity, json: String): Unit = {

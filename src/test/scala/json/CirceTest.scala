@@ -4,7 +4,7 @@ import io.circe.generic.auto._
 import io.circe.syntax._
 import org.scalatest.{FunSuite, Matchers}
 
-class CirceTest extends FunSuite with Matchers with Common {
+class CirceTest extends FunSuite with Matchers with Logging {
   test("case class") {
     val name = Name("auric", "goldfinger")
     val json = name.asJson
