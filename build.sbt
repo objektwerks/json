@@ -5,6 +5,8 @@ scalaVersion := "2.12.3"
 libraryDependencies ++= {
   Seq(
     "com.typesafe.play" % "play-json_2.12" % "2.6.3",
+    "io.circe" % "circe-parser_2.12" % "0.8.0",
+    "io.circe" % "circe-generic_2.12" % "0.8.0",
     "ch.qos.logback" % "logback-classic" % "1.2.3",
     "org.scalatest" % "scalatest_2.12" % "3.0.3" % "test"
   )
