@@ -8,7 +8,7 @@ class CirceTest extends FunSuite with Matchers with Common {
   test("case class") {
     val name = Name("pussy", "galore")
     val json = name.asJson
-    debug("*** Circe Test", name, json.toString)
+    debug("Circe Test", name, json.toString)
     name shouldBe json.as[Name].toOption.get
   }
 }
