@@ -1,14 +1,14 @@
 name := "scala.json"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "2.12.6"
+scalaVersion := "2.12.9"
 libraryDependencies ++= {
   Seq(
-    "com.typesafe.play" % "play-json_2.12" % "2.6.3",
-    "io.circe" % "circe-parser_2.12" % "0.8.0",
-    "io.circe" % "circe-generic_2.12" % "0.8.0",
+    "com.typesafe.play" %% "play-json" % "2.7.4",
+    "io.circe" %% "circe-parser" % "0.11.1",
+    "io.circe" %% "circe-generic" % "0.11.1",
     "ch.qos.logback" % "logback-classic" % "1.2.3",
-    "org.scalatest" % "scalatest_2.12" % "3.0.5" % "test"
+    "org.scalatest" %% "scalatest" % "3.0.8" % Test
   )
 }
 scalacOptions ++= Seq(
@@ -26,5 +26,3 @@ scalacOptions ++= Seq(
   "-Xlint:missing-interpolator",
   "-Xlint"
 )
-fork in test := true
-javaOptions += "-server -Xss1m -Xmx2g"
