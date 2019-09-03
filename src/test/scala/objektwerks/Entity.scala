@@ -1,4 +1,4 @@
-package json
+package objektwerks
 
 import play.api.libs.json.Json
 

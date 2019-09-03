@@ -1,4 +1,4 @@
-package json
+package objektwerks
 
 import org.scalatest.{FunSuite, Matchers}
 import play.api.libs.json.Json
