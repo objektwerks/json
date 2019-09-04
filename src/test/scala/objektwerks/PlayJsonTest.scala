@@ -16,7 +16,7 @@ class PlayJsonTest extends FunSuite with Matchers {
   test("play json") {
     val name = Name("james", "bond")
     val json = Json.toJson(name).toString
-    logger.info(s"play json name: $name")
+    logger.info(s"play name: $name")
     logger.info(s"play name json: $json")
     name shouldBe Json.parse(json).as[Name]
   }
