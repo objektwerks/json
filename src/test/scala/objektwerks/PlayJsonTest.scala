@@ -4,6 +4,12 @@ import org.scalatest.{FunSuite, Matchers}
 import org.slf4j.LoggerFactory
 import play.api.libs.json.Json
 
+case class Name(first: String, last: String)
+
+object Name {
+  implicit val nameFormat = Json.format[Name]
+}
+
 class PlayJsonTest extends FunSuite with Matchers {
   val logger = LoggerFactory.getLogger(getClass)
 

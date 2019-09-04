@@ -2,8 +2,13 @@ package objektwerks
 
 import org.scalatest.{FunSuite, Matchers}
 import org.slf4j.LoggerFactory
+import upickle.default.{macroRW, ReadWriter => RW, _}
 
-import upickle.default._
+case class Company(name: String, address: String)
+
+object Company {
+  implicit val rw: RW[Company] = macroRW
+}
 
 class UPickleTest extends FunSuite with Matchers {
   val logger = LoggerFactory.getLogger(getClass)

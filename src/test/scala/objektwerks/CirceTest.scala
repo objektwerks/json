@@ -5,6 +5,8 @@ import io.circe.syntax._
 import org.scalatest.{FunSuite, Matchers}
 import org.slf4j.LoggerFactory
 
+case class Task(worker: String, work: String)
+
 class CirceTest extends FunSuite with Matchers {
   val logger = LoggerFactory.getLogger(getClass)
 
