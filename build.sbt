@@ -1,7 +1,7 @@
 name := "scala.json"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "2.12.9"
+scalaVersion := "2.12.10"
 libraryDependencies ++= {
   Seq(
     "io.circe" %% "circe-parser" % "0.11.1",
