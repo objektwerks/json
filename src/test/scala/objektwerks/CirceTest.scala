@@ -13,9 +13,11 @@ class CirceTest extends FunSuite with Matchers {
     import io.circe.syntax._
 
     val task = Task("auric goldfinger", "stack gold")
-    val json = task.asJson
+    val taskAsJson = task.asJson
+
     logger.info(s"circe task: $task")
-    logger.info(s"circe task json: $json")
-    task shouldBe json.as[Task].toOption.get
+    logger.info(s"circe task as json: $taskAsJson")
+
+    task shouldBe taskAsJson.as[Task].toOption.get
   }
 }

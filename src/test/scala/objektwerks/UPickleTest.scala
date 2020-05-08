@@ -34,21 +34,21 @@ class UPickleTest extends FunSuite with Matchers {
     import upickle.default._
 
     val company = Company("objektwerks", "33 Beach Rd., Boca Grande, FL 33333")
-    val json = write(company)
+    val companyAsJson = write(company)
     logger.info(s"upickle company: $company")
-    logger.info(s"upickle company json: $json")
-    company shouldBe read[Company](json)
+    logger.info(s"upickle company as json: $companyAsJson")
+    company shouldBe read[Company](companyAsJson)
 
     val entity = Company("ipawerks", "66 IPA Circle, Boca Grande, FL 66666").asInstanceOf[Entity]
-    val entityJson = write(entity)
+    val entityAsJson = write(entity)
     logger.info(s"upickle entity: $entity")
-    logger.info(s"upickle entity json: $entityJson")
-    entity shouldBe read[Entity](entityJson)
+    logger.info(s"upickle entity as json: $entityAsJson")
+    entity shouldBe read[Entity](entityAsJson)
 
     val message = Company("dipawerks", "99 DIPA Drive, Boca Grande, FL 99999").asInstanceOf[Message]
-    val messageJson = write(message)
+    val messageAsJson = write(message)
     logger.info(s"upickle message: $message")
-    logger.info(s"upickle message json: $messageJson")
-    message shouldBe read[Message](messageJson)
+    logger.info(s"upickle message as json: $messageAsJson")
+    message shouldBe read[Message](messageAsJson)
   }
 }
