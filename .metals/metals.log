@@ -136,3 +136,7 @@ Starting thread that pumps server stdout and redirects it to the client stdout..
 2020.05.08 15:01:36 INFO  time: compiled scala-json-test in 6.2s
 2020.05.08 15:01:52 INFO  compiling scala-json-test (4 scala sources)
 2020.05.08 15:02:04 INFO  time: compiled scala-json-test in 11s
+2020.05.08 15:07:06 INFO  compiling scala-json-test (1 scala source)
+2020.05.08 15:07:09 INFO  time: compiled scala-json-test in 3.52s
+2020.05.08 15:09:40 INFO  compiling scala-json-test (1 scala source)
+2020.05.08 15:09:42 INFO  time: compiled scala-json-test in 2.18s

@@ -20,9 +20,11 @@ class JsoniterTest extends FunSuite with Matchers {
     import com.github.plokhotnyuk.jsoniter_scala.core._
 
     val employee = Employee("goldfinger", "auric goldfinger")
-    val json = writeToArray(employee)
+    val employeeAsJson = writeToArray(employee)
+
     logger.info(s"jsoniter employee: $employee")
-    logger.info(s"jsoniter employee json: ${json.mkString}")
-    employee shouldBe readFromArray(json)
+    logger.info(s"jsoniter employee as json: ${employeeAsJson.mkString}")
+    
+    employee shouldBe readFromArray(employeeAsJson)
   }
 }
