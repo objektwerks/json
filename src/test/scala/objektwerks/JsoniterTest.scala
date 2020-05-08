@@ -9,7 +9,7 @@ object Employee {
   import com.github.plokhotnyuk.jsoniter_scala.core._
   import com.github.plokhotnyuk.jsoniter_scala.macros._
 
-  implicit val codec: JsonValueCodec[Employee] = JsonCodecMaker.make[Employee](CodecMakerConfig())
+  implicit val codec: JsonValueCodec[Employee] = JsonCodecMaker.make[Employee](CodecMakerConfig)
 }
 
 class JsoniterTest extends FunSuite with Matchers {
