@@ -4,7 +4,6 @@ import org.scalatest.{FunSuite, Matchers}
 import org.slf4j.LoggerFactory
 
 sealed trait Person extends Product with Serializable {
-  def id: Int
   def name: String
 }
 
