@@ -4,7 +4,7 @@ import org.scalatest.{FunSuite, Matchers}
 import org.slf4j.LoggerFactory
 
 sealed trait Person extends Product with Serializable {
-  def id: String
+  def id: Int
   def name: String
 }
 
@@ -15,7 +15,7 @@ object Person {
   implicit val personCode: JsonValueCodec[Person] = JsonCodecMaker.make[Person](CodecMakerConfig)
 }
 
-case class Employee(id: String, name: String) extends Person
+case class Employee(id: Int, name: String) extends Person
 
 object Employee {
   import com.github.plokhotnyuk.jsoniter_scala.core._
@@ -31,7 +31,7 @@ class JsoniterTest extends FunSuite with Matchers {
     import com.github.plokhotnyuk.jsoniter_scala.core._
 
     import Employee._
-    val employee = Employee("goldfinger", "auric goldfinger")
+    val employee = Employee(id = 1, name = "auric goldfinger")
     employee.isInstanceOf[Employee]
     val employeeAsJson = writeToArray(employee)
 
