@@ -12,7 +12,7 @@ object Person {
   import com.github.plokhotnyuk.jsoniter_scala.core._
   import com.github.plokhotnyuk.jsoniter_scala.macros._
 
-  implicit val personCode: JsonValueCodec[Person] = JsonCodecMaker.make[Person](CodecMakerConfig)
+  implicit val personCode: JsonValueCodec[Person] = JsonCodecMaker.make
 }
 
 case class Employee(id: Int, name: String) extends Person
@@ -21,7 +21,7 @@ object Employee {
   import com.github.plokhotnyuk.jsoniter_scala.core._
   import com.github.plokhotnyuk.jsoniter_scala.macros._
 
-  implicit val employeeCodec: JsonValueCodec[Employee] = JsonCodecMaker.make[Employee](CodecMakerConfig)
+  implicit val employeeCodec: JsonValueCodec[Employee] = JsonCodecMaker.make
 }
 
 class JsoniterTest extends FunSuite with Matchers {
