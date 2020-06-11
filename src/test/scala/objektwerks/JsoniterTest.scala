@@ -1,6 +1,8 @@
 package objektwerks
 
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
+
 import org.slf4j.LoggerFactory
 
 sealed trait Person extends Product with Serializable {
@@ -23,7 +25,7 @@ object Employee {
   implicit val employeeCodec: JsonValueCodec[Employee] = JsonCodecMaker.make
 }
 
-class JsoniterTest extends FunSuite with Matchers {
+class JsoniterTest extends AnyFunSuite with Matchers {
   val logger = LoggerFactory.getLogger(getClass)
 
   test("jsoniter") {

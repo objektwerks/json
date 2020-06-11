@@ -1,6 +1,8 @@
 package objektwerks
 
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
+
 import org.slf4j.LoggerFactory
 
 case class Name(first: String, last: String)
@@ -11,7 +13,7 @@ object Name {
   implicit val nameFormat = Json.format[Name]
 }
 
-class PlayJsonTest extends FunSuite with Matchers {
+class PlayJsonTest extends AnyFunSuite with Matchers {
   val logger = LoggerFactory.getLogger(getClass)
 
   test("play json") {

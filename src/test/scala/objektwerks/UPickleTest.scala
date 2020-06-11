@@ -1,6 +1,8 @@
 package objektwerks
 
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
+
 import org.slf4j.LoggerFactory
 
 sealed trait Message extends Product with Serializable
@@ -27,7 +29,7 @@ object Company {
   implicit val readWriter: ReadWriter[Company] = macroRW
 }
 
-class UPickleTest extends FunSuite with Matchers {
+class UPickleTest extends AnyFunSuite with Matchers {
   val logger = LoggerFactory.getLogger(getClass)
 
   test("upickle") {
@@ -35,20 +37,28 @@ class UPickleTest extends FunSuite with Matchers {
 
     val company = Company("objektwerks", "33 Beach Rd., Boca Grande, FL 33333")
     val companyAsJson = write(company)
+
     logger.info(s"upickle company: $company")
     logger.info(s"upickle company as json: $companyAsJson")
+
     company shouldBe read[Company](companyAsJson)
 
-    val entity = Company("ipawerks", "66 IPA Circle, Boca Grande, FL 66666").asInstanceOf[Entity]
+    val entity = company.asInstanceOf[Entity]
+    entity.isInstanceOf[Entity] shouldBe true
     val entityAsJson = write(entity)
+
     logger.info(s"upickle entity: $entity")
     logger.info(s"upickle entity as json: $entityAsJson")
+
     entity shouldBe read[Entity](entityAsJson)
 
-    val message = Company("dipawerks", "99 DIPA Drive, Boca Grande, FL 99999").asInstanceOf[Message]
+    val message = company.asInstanceOf[Message]
+    message.isInstanceOf[Message] shouldBe true
     val messageAsJson = write(message)
+
     logger.info(s"upickle message: $message")
     logger.info(s"upickle message as json: $messageAsJson")
+
     message shouldBe read[Message](messageAsJson)
   }
 }

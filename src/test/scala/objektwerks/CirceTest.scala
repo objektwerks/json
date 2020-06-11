@@ -1,11 +1,13 @@
 package objektwerks
 
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
+
 import org.slf4j.LoggerFactory
 
 case class Task(worker: String, work: String)
 
-class CirceTest extends FunSuite with Matchers {
+class CirceTest extends AnyFunSuite with Matchers {
   val logger = LoggerFactory.getLogger(getClass)
 
   test("circe") {
