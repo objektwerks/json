@@ -6,6 +6,7 @@ import org.scalatest.matchers.should.Matchers
 import org.slf4j.LoggerFactory
 
 sealed trait Work extends Product with Serializable
+
 case class Task(worker: String, work: String) extends Work
 
 class CirceTest extends AnyFunSuite with Matchers {
