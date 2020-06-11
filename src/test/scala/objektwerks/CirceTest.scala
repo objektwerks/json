@@ -5,7 +5,8 @@ import org.scalatest.matchers.should.Matchers
 
 import org.slf4j.LoggerFactory
 
-case class Task(worker: String, work: String)
+sealed trait Work extends Product with Serializable
+case class Task(worker: String, work: String) extends Work
 
 class CirceTest extends AnyFunSuite with Matchers {
   val logger = LoggerFactory.getLogger(getClass)
@@ -21,5 +22,14 @@ class CirceTest extends AnyFunSuite with Matchers {
     logger.info(s"circe task as json: $taskAsJson")
 
     task shouldBe taskAsJson.as[Task].toOption.get
+
+    val work = task.asInstanceOf[Work]
+    work.isInstanceOf[Work] shouldBe true
+    val workAsJson = work.asJson
+
+    logger.info(s"circe work: $work")
+    logger.info(s"circe work as json: $workAsJson")
+
+    work shouldBe workAsJson.as[Work].toOption.get
   }
 }
