@@ -15,6 +15,6 @@ libraryDependencies ++= {
     "com.typesafe.play" %% "play-json" % playJsonVersion,
     "com.lihaoyi" %% "upickle" % upickleVersion,
     "ch.qos.logback" % "logback-classic" % "1.2.3",
-    "org.scalatest" %% "scalatest" % "3.1.2" % Test
+    "org.scalatest" %% "scalatest" % "3.2.0" % Test
   )
 }
