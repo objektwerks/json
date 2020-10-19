@@ -1,7 +1,7 @@
 name := "scala.json"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "2.13.2"
+scalaVersion := "2.13.3"
 libraryDependencies ++= {
   val circeVersion = "0.13.0"
   val jsoniterVersion = "2.6.2"
