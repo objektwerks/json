@@ -5,7 +5,7 @@ Json
 1. Circe ( 2s )
 2. Play Json ( 3.5s )
 3. Jsoniter ( 23ms )
-4. Upickle ( 60ms )
+4. uPickle ( 60ms )
 
 Test
 ----
