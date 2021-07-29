@@ -41,6 +41,7 @@ class JsoniterTest extends AnyFunSuite with Matchers {
 
     import Person._
     val person = employee.asInstanceOf[Person]
+    person.isInstanceOf[Person] shouldBe true
     val personAsJson = writeToArray(person)
 
     logger.info(s"jsoniter person: $person")
