@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory
 
 sealed trait Identifier extends Product with Serializable
 
-case class Name(first: String, last: String) extends Identifier
+final case class Name(first: String, last: String) extends Identifier
 
 object Name {
   import play.api.libs.json.Json

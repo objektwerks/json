@@ -21,7 +21,7 @@ object Entity {
   implicit val entityRW: ReadWriter[Entity] = ReadWriter.merge( macroRW[Company] )
 }
 
-case class Company(name: String, address: String) extends Entity
+final case class Company(name: String, address: String) extends Entity
 
 object Company {
   import upickle.default._

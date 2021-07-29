@@ -16,7 +16,7 @@ object Person {
   implicit val personCodec: JsonValueCodec[Person] = JsonCodecMaker.make
 }
 
-case class Employee(id: Int, name: String) extends Person
+final case class Employee(id: Int, name: String) extends Person
 
 object Employee {
   import com.github.plokhotnyuk.jsoniter_scala.core._
