@@ -34,7 +34,7 @@ class UPickleTest extends AnyFunSuite with Matchers {
   test("upickle") {
     import upickle.default._
 
-    val company = Company("objektwerks", "33 Beach Rd., Boca Grande, FL 33333")
+    val company = Company("objektwerks", "1 Beach Rd., Boca Grande, FL 12345")
     val companyAsJson = write(company)
 
     logger.info(s"upickle company: $company")
