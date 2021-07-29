@@ -8,8 +8,10 @@ Scala Json
 4. Play Json ( 177ms )
 5. uPickle ( 30ms )
 
->Tests are similar, with UPicleTest being more involved. Logging is used in all tests.
->So performance numbers should not be taken too seriously.
+>Note:
+* Tests are similar, with UPicleTest being a bit more involved.
+* Logging is used in all tests. 
+* So performance numbers should not be taken too seriously.
 
 Test
 ----
