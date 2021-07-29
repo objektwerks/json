@@ -32,7 +32,6 @@ class JsoniterTest extends AnyFunSuite with Matchers {
 
     import Employee._
     val employee = Employee(id = 1, name = "auric goldfinger")
-    employee.isInstanceOf[Employee]
     val employeeAsJson = writeToArray(employee)
 
     logger.info(s"jsoniter employee: $employee")
@@ -42,7 +41,6 @@ class JsoniterTest extends AnyFunSuite with Matchers {
 
     import Person._
     val person = employee.asInstanceOf[Person]
-    person.isInstanceOf[Person] shouldBe true
     val personAsJson = writeToArray(person)
 
     logger.info(s"jsoniter person: $person")
