@@ -1,19 +1,13 @@
-Json
-----
->The purpose of this project is to test Scala json libraries:
+Scala Json
+----------
+>Scala json library tests:
 
-1. Circe ( 2s )
-2. Play Json ( 3.5s )
+1. Borer ( ... )
+2. Circe ( 2s )
 3. Jsoniter ( 23ms )
-4. uPickle ( 60ms )
+4. Play Json ( 3.5s )
+5. uPickle ( 60ms )
 
 Test
 ----
 1. sbt clean test
-
-Bloop
------
-1. sbt bloopInstall
-2. bloop clean scala-json
-3. bloop compile scala-json
-4. bloop test scala-json. ( After steps 1 - 3, typically only this step is required. )
