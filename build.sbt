@@ -17,7 +17,7 @@ libraryDependencies ++= {
     "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-macros" % jsoniterVersion % Provided,
     "com.typesafe.play" %% "play-json" % playJsonVersion,
     "com.lihaoyi" %% "upickle" % upickleVersion,
-    "ch.qos.logback" % "logback-classic" % "1.2.3",
+    "ch.qos.logback" % "logback-classic" % "1.2.5",
     "org.scalatest" %% "scalatest" % "3.2.9" % Test
   )
 }
