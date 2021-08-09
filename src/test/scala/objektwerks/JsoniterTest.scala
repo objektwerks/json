@@ -35,7 +35,7 @@ class JsoniterTest extends AnyFunSuite with Matchers {
     val employeeAsJson = writeToArray(employee)
 
     logger.info(s"jsoniter employee: $employee")
-    logger.info(s"jsoniter employee as json: ${employeeAsJson.mkString}")
+    logger.info(s"jsoniter employee as json: ${employeeAsJson.map(_.toChar).mkString}")
     
     employee shouldBe readFromArray(employeeAsJson)
 
@@ -45,7 +45,7 @@ class JsoniterTest extends AnyFunSuite with Matchers {
     val personAsJson = writeToArray(person)
 
     logger.info(s"jsoniter person: $person")
-    logger.info(s"jsoniter person as json: ${personAsJson.mkString}")
+    logger.info(s"jsoniter person as json: ${personAsJson.map(_.toChar).mkString}")
     
     person shouldBe readFromArray(personAsJson)
   }
