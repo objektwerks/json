@@ -5,7 +5,6 @@ import org.scalatest.matchers.should.Matchers
 import org.slf4j.LoggerFactory
 
 sealed trait Work extends Product with Serializable
-
 final case class Task(worker: String, work: String) extends Work
 
 class CirceTest extends AnyFunSuite with Matchers {
@@ -16,20 +15,20 @@ class CirceTest extends AnyFunSuite with Matchers {
     import io.circe.syntax._
 
     val task = Task("auric goldfinger", "stack gold")
-    val taskAsJson = task.asJson
+    val taskJson = task.asJson
 
     logger.info(s"circe task: $task")
-    logger.info(s"circe task as json: $taskAsJson")
+    logger.info(s"circe task as json: $taskJson")
 
-    task shouldBe taskAsJson.as[Task].toOption.get
+    task shouldBe taskJson.as[Task].toOption.get
 
     val work = task.asInstanceOf[Work]
     work.isInstanceOf[Work] shouldBe true
-    val workAsJson = work.asJson
+    val workJson = work.asJson
 
     logger.info(s"circe work: $work")
-    logger.info(s"circe work as json: $workAsJson")
+    logger.info(s"circe work as json: $workJson")
 
-    work shouldBe workAsJson.as[Work].toOption.get
+    work shouldBe workJson.as[Work].toOption.get
   }
 }

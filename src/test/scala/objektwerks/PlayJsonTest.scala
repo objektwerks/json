@@ -5,9 +5,7 @@ import org.scalatest.matchers.should.Matchers
 import org.slf4j.LoggerFactory
 
 sealed trait Identifier extends Product with Serializable
-
 final case class Name(first: String, last: String) extends Identifier
-
 object Name {
   import play.api.libs.json.Json
 
@@ -23,20 +21,20 @@ class PlayJsonTest extends AnyFunSuite with Matchers {
     import Name._
 
     val name = Name("james", "bond")
-    val nameAsJson = Json.toJson(name).toString
+    val nameJson = Json.toJson(name).toString
 
     logger.info(s"play json name: $name")
-    logger.info(s"play json name as json: $nameAsJson")
+    logger.info(s"play json name as json: $nameJson")
 
-    name shouldBe Json.parse(nameAsJson).as[Name]
+    name shouldBe Json.parse(nameJson).as[Name]
 
     val identifier = name.asInstanceOf[Identifier]
     identifier.isInstanceOf[Identifier] shouldBe true
-    val identifierAsJson = Json.toJson(identifier).toString
+    val identifierJson = Json.toJson(identifier).toString
 
     logger.info(s"play json identifier: $identifier")
-    logger.info(s"play json identifier as json: $identifierAsJson")
+    logger.info(s"play json identifier as json: $identifierJson")
 
-    identifier shouldBe Json.parse(identifierAsJson).as[Identifier]
+    identifier shouldBe Json.parse(identifierJson).as[Identifier]
   }
 }

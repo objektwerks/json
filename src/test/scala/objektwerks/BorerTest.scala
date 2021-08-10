@@ -22,20 +22,20 @@ class BorerTest extends AnyFunSuite with Matchers {
     import Canine._
 
     val dog = Dog("bulldog", "spike")
-    val dogAsJson = Json.encode(dog).toUtf8String
+    val dogJson = Json.encode(dog).toUtf8String
 
     logger.info(s"borer dog: $dog")
-    logger.info(s"borer dog as json: $dogAsJson")
+    logger.info(s"borer dog as json: $dogJson")
 
-    dog shouldBe Json.decode(dogAsJson.getBytes("UTF8")).to[Dog].value
+    dog shouldBe Json.decode(dogJson.getBytes("UTF8")).to[Dog].value
 
     val canine = dog.asInstanceOf[Canine]
     canine.isInstanceOf[Canine] shouldBe true
-    val canineAsJson = Json.encode(canine).toUtf8String
+    val canineJson = Json.encode(canine).toUtf8String
 
     logger.info(s"borer canine: $canine")
-    logger.info(s"borer canine as json: $canineAsJson")
+    logger.info(s"borer canine as json: $canineJson")
 
-    canine shouldBe Json.decode(canineAsJson.getBytes("UTF8")).to[Canine].value
+    canine shouldBe Json.decode(canineJson.getBytes("UTF8")).to[Canine].value
   }
 }
