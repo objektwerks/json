@@ -32,19 +32,18 @@ class JsoniterTest extends AnyFunSuite with Matchers {
 
     import Employee._
     val employee = Employee(id = 1, name = "auric goldfinger")
-    val employeeByteArray = writeToArray[Employee](employee)
+    val employeeJson = writeToString[Employee](employee)
 
     logger.info(s"jsoniter employee: $employee")
-    logger.info(s"jsoniter employee as json: ${employeeByteArray.map(_.toChar).mkString}")
+    logger.info(s"jsoniter employee as json: $employeeJson")
     
-    employee shouldBe readFromArray[Employee](employeeByteArray)
+    employee shouldBe readFromString[Employee](employeeJson)
 
     import Person._
-    val person = employee.asInstanceOf[Person]
-    person.isInstanceOf[Person] shouldBe true
-    val personByteArray = writeToArray[Person](person)
+    val personJson = writeToString[Person](employee)
 
-    logger.info(s"jsoniter person: $person")
-    logger.info(s"jsoniter person as json: ${personByteArray.map(_.toChar).mkString}")
+    logger.info(s"jsoniter employee as person json: $personJson")
+
+    employee shouldBe readFromString[Employee](personJson)
   }
 }
