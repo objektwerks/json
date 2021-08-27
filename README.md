@@ -1,13 +1,14 @@
 Scala Json
 ----------
->Tests:
+>Test performance in milliseconds:
 
-1. Borer : 26ms
-2. Circe : 122ms
-3. Jsoniter : 17ms
-4. PlayJson : 150ms
-5. uPickle : 28ms
-6. ZioJson : 147ms
+1. Borer : 26
+2. Circe : 122
+3. Jsoniter : 17
+4. PlayJson : 150
+5. SprayJson : 23
+6. uPickle : 28
+7. ZioJson : 147
 
 >Note:
 * Tests are similar, with UPicleTest being a bit more involved.
