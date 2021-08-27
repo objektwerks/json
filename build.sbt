@@ -7,6 +7,7 @@ libraryDependencies ++= {
   val circeVersion = "0.14.1"
   val jsoniterVersion = "2.9.1"
   val playJsonVersion = "2.9.2"
+  val sprayJsonVersion = "1.3.6"
   val upickleVersion = "1.4.0"
   val zioVersion = "1.0.11"
   val zioJsonVersion = "0.1.5"
@@ -18,6 +19,7 @@ libraryDependencies ++= {
     "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-core"   % jsoniterVersion,
     "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-macros" % jsoniterVersion % Provided,
     "com.typesafe.play" %% "play-json" % playJsonVersion,
+    "io.spray" %%  "spray-json" % sprayJsonVersion,
     "com.lihaoyi" %% "upickle" % upickleVersion,
     "dev.zio" %% "zio" % zioVersion,
     "dev.zio" %% "zio-json" % zioJsonVersion,
