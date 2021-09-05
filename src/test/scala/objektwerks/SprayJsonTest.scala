@@ -2,7 +2,6 @@ package objektwerks
 
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
-import org.slf4j.LoggerFactory
 
 import spray.json.{DefaultJsonProtocol, JsValue, enrichAny}
 
@@ -24,8 +23,6 @@ object ColorProtocol extends DefaultJsonProtocol {
 }
 
 class SprayJsonTest extends AnyFunSuite with Matchers {
-  val logger = LoggerFactory.getLogger(getClass)
-
   test("spray json") {
     import ColorProtocol._
     import spray.json._
@@ -33,8 +30,8 @@ class SprayJsonTest extends AnyFunSuite with Matchers {
     val navy = Navy("navy", "#000080")
     val navyJson = navy.toJson
 
-    logger.info(s"spray json navy: $navy")
-    logger.info(s"spray json navy as json: $navyJson")
+    println(s"spray json navy: $navy")
+    println(s"spray json navy as json: $navyJson")
 
     navy shouldBe navyJson.convertTo[Navy]
 
@@ -42,8 +39,8 @@ class SprayJsonTest extends AnyFunSuite with Matchers {
     color.isInstanceOf[Color] shouldBe true
     val colorJson = ColorProtocol.write(color)
 
-    logger.info(s"spray json color: $color")
-    logger.info(s"spray json color as json: $colorJson")
+    println(s"spray json color: $color")
+    println(s"spray json color as json: $colorJson")
 
     color shouldBe ColorProtocol.read(colorJson)
   }
