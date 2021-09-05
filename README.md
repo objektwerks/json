@@ -7,11 +7,11 @@ Scala Json
 3. uPickle : 25
 4. Borer : 26
 5. Circe : 123
-6. ZioJson : 152
-7. PlayJson : 154
+6. ZioJson : 145
+7. PlayJson : 152
 
->Note:
-* Tests are similar, with UPicleTest being a bit more involved.
+>Notes:
+* Tests implement a common template, with UPicleTest being a bit more involved.
 * So performance numbers should ***not*** be taken ***too*** seriously.
 
 Test
