@@ -1,6 +1,6 @@
 Scala Json
 ----------
->Test performance in milliseconds:
+>Scala json library test performance in milliseconds:
 
 1. Jsoniter : 15
 2. SprayJson : 23
@@ -15,6 +15,7 @@ Scala Json
 >Notes:
 1. Tests implement a common template, with UPicleTest being a bit more involved.
 2. So performance numbers should ***not*** be taken ***too*** seriously.
+3. Jsoniter, uPickle, Borer, Circe, ZioJson and PlayJson suport **ScalaJs**.
 
 Test
 ----
