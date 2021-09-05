@@ -2,7 +2,6 @@ package objektwerks
 
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
-import org.slf4j.LoggerFactory
 
 sealed trait Message extends Product with Serializable
 object Message {
@@ -26,16 +25,14 @@ object Company {
 }
 
 class UPickleTest extends AnyFunSuite with Matchers {
-  val logger = LoggerFactory.getLogger(getClass)
-
   test("upickle") {
     import upickle.default._
 
     val company = Company("objektwerks", "1 Beach Rd., Boca Grande, FL 12345")
     val companyJson = write(company)
 
-    logger.info(s"upickle company: $company")
-    logger.info(s"upickle company as json: $companyJson")
+    println(s"upickle company: $company")
+    println(s"upickle company as json: $companyJson")
 
     company shouldBe read[Company](companyJson)
 
@@ -43,8 +40,8 @@ class UPickleTest extends AnyFunSuite with Matchers {
     entity.isInstanceOf[Entity] shouldBe true
     val entityJson = write(entity)
 
-    logger.info(s"upickle entity: $entity")
-    logger.info(s"upickle entity as json: $entityJson")
+    println(s"upickle entity: $entity")
+    println(s"upickle entity as json: $entityJson")
 
     entity shouldBe read[Entity](entityJson)
 
@@ -52,8 +49,8 @@ class UPickleTest extends AnyFunSuite with Matchers {
     message.isInstanceOf[Message] shouldBe true
     val messageJson = write(message)
 
-    logger.info(s"upickle message: $message")
-    logger.info(s"upickle message as json: $messageJson")
+    println(s"upickle message: $message")
+    println(s"upickle message as json: $messageJson")
 
     message shouldBe read[Message](messageJson)
   }
