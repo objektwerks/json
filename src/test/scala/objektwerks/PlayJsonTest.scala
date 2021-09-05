@@ -2,7 +2,6 @@ package objektwerks
 
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
-import org.slf4j.LoggerFactory
 
 sealed trait Identifier extends Product with Serializable
 final case class Name(first: String, last: String) extends Identifier
@@ -14,8 +13,6 @@ object Name {
 }
 
 class PlayJsonTest extends AnyFunSuite with Matchers {
-  val logger = LoggerFactory.getLogger(getClass)
-
   test("play json") {
     import play.api.libs.json.Json
     import Name._
@@ -23,8 +20,8 @@ class PlayJsonTest extends AnyFunSuite with Matchers {
     val name = Name("james", "bond")
     val nameJson = Json.toJson(name).toString
 
-    logger.info(s"play json name: $name")
-    logger.info(s"play json name as json: $nameJson")
+    println(s"play json name: $name")
+    println(s"play json name as json: $nameJson")
 
     name shouldBe Json.parse(nameJson).as[Name]
 
@@ -32,8 +29,8 @@ class PlayJsonTest extends AnyFunSuite with Matchers {
     identifier.isInstanceOf[Identifier] shouldBe true
     val identifierJson = Json.toJson(identifier).toString
 
-    logger.info(s"play json identifier: $identifier")
-    logger.info(s"play json identifier as json: $identifierJson")
+    println(s"play json identifier: $identifier")
+    println(s"play json identifier as json: $identifierJson")
 
     identifier shouldBe Json.parse(identifierJson).as[Identifier]
   }
