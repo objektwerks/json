@@ -12,7 +12,8 @@ Scala Json
 
 >The top 4 and bottom 3 json libraries form a 2-tier eco-system, in terms of performance.
 
->Notes:
+Notes
+-----
 1. Tests implement a common template, with UPicleTest being a bit more involved.
 2. So performance numbers should ***not*** be taken ***too*** seriously.
 3. Jsoniter, uPickle, Borer, Circe, ZioJson and PlayJson suport **ScalaJs**.
