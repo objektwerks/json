@@ -17,7 +17,6 @@ class SprayJsonTest extends AnyFunSuite with Matchers {
     employee shouldBe employeeJson.convertTo[Employee]
 
     val person = employee.asInstanceOf[Person]
-    person.isInstanceOf[Person] shouldBe true
     val personJson = SprayJsonCodecs.write(person)
 
     println(s"spray json person: $person")
