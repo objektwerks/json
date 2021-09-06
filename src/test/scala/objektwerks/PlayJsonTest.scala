@@ -8,7 +8,7 @@ class PlayJsonTest extends AnyFunSuite with Matchers {
     import PlayJsonCodecs._
     import play.api.libs.json.Json
 
-    val employee = Employee(1, "James Bond")
+    val employee = Employees.newEmployee
     val employeeJson = Json.toJson(employee).toString
     employee shouldBe Json.parse(employeeJson).as[Employee]
 
