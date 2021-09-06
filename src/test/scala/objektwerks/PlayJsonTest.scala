@@ -17,7 +17,6 @@ class PlayJsonTest extends AnyFunSuite with Matchers {
     employee shouldBe Json.parse(employeeJson).as[Employee]
 
     val person = employee.asInstanceOf[Person]
-    person.isInstanceOf[Person] shouldBe true
     val identifierJson = Json.toJson(person).toString
 
     println(s"play json person: $person")
