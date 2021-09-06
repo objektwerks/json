@@ -17,7 +17,6 @@ class BorerTest extends AnyFunSuite with Matchers {
     employee shouldBe Json.decode(employeeJson.getBytes("UTF8")).to[Employee].value
 
     val person = employee.asInstanceOf[Person]
-    person.isInstanceOf[Person] shouldBe true
     val canineJson = Json.encode(person).toUtf8String
 
     println(s"borer person: $person")
