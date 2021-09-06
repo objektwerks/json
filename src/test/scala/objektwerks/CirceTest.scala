@@ -8,7 +8,7 @@ class CirceTest extends AnyFunSuite with Matchers {
     import io.circe.generic.auto._
     import io.circe.syntax._
 
-    val employee = Employee(1, "James Bond")
+    val employee = Employees.newEmployee
     val employeeJson = employee.asJson
     employee shouldBe employeeJson.as[Employee].toOption.get
 
