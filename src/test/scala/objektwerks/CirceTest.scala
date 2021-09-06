@@ -10,18 +10,16 @@ class CirceTest extends AnyFunSuite with Matchers {
 
     val employee = Employee(1, "James Bond")
     val employeeJson = employee.asJson
+    employee shouldBe employeeJson.as[Employee].toOption.get
 
     println(s"circe employee: $employee")
     println(s"circe employee json: $employeeJson")
 
-    employee shouldBe employeeJson.as[Employee].toOption.get
-
     val person = employee.asInstanceOf[Person]
     val personJson = person.asJson
+    person shouldBe personJson.as[Person].toOption.get
 
     println(s"circe person: $person")
     println(s"circe person json: $personJson")
-
-    person shouldBe personJson.as[Person].toOption.get
   }
 }
