@@ -17,11 +17,11 @@ class PlayJsonTest extends AnyFunSuite with Matchers {
     employee shouldBe Json.parse(employeeJson).as[Employee]
 
     val person = employee.asInstanceOf[Person]
-    val identifierJson = Json.toJson(person).toString
+    val personJson = Json.toJson(person).toString
 
     println(s"play json person: $person")
-    println(s"play json person json: $identifierJson")
+    println(s"play json person json: $personJson")
 
-    person shouldBe Json.parse(identifierJson).as[Person]
+    person shouldBe Json.parse(personJson).as[Person]
   }
 }
