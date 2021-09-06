@@ -10,18 +10,16 @@ class UPickleTest extends AnyFunSuite with Matchers {
 
     val employee = Employee(1, "James Bond")
     val employeeJson = write(employee)
+    employee shouldBe read[Employee](employeeJson)
 
     println(s"upickle employee: $employee")
     println(s"upickle employee json: $employeeJson")
 
-    employee shouldBe read[Employee](employeeJson)
-
     val person = employee.asInstanceOf[Person]
-    val entityJson = write(person)
+    val personJson = write(person)
+    person shouldBe read[Person](personJson)
 
     println(s"upickle person: $person")
-    println(s"upickle person json: $entityJson")
-
-    person shouldBe read[Person](entityJson)
+    println(s"upickle person json: $personJson")
   }
 }
