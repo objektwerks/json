@@ -17,7 +17,6 @@ class UPickleTest extends AnyFunSuite with Matchers {
     employee shouldBe read[Employee](employeeJson)
 
     val person = employee.asInstanceOf[Person]
-    person.isInstanceOf[Person] shouldBe true
     val entityJson = write(person)
 
     println(s"upickle person: $person")
