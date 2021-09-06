@@ -8,7 +8,7 @@ class ZioJsonTest extends AnyFunSuite with Matchers {
     import ZioJsonCodecs._
     import zio.json._
 
-    val employee = Employee(1, "James Bond")
+    val employee = Employees.newEmployee
     val employeeJson = employee.toJson
     employee shouldBe employeeJson.fromJson[Employee].getOrElse( Employee(0, "") )
 
