@@ -13,7 +13,7 @@ class JsoniterTest extends AnyFunSuite with Matchers {
     employee shouldBe readFromString[Employee](employeeJson)
 
     println(s"jsoniter employee: $employee")
-    println(s"jsoniter employee as json: $employeeJson")
+    println(s"jsoniter employee json: $employeeJson")
     
     val personJson = writeToString[Person](employee)
     employee shouldBe readFromString[Employee](personJson)
