@@ -8,7 +8,7 @@ class BorerTest extends AnyFunSuite with Matchers {
     import BorerCodecs._
     import io.bullet.borer.Json
 
-    val employee = Employee(1, "James Bond")
+    val employee = Employees.newEmployee
     val employeeJson = Json.encode(employee).toUtf8String
     employee shouldBe Json.decode(employeeJson.getBytes("UTF8")).to[Employee].value
 
