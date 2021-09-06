@@ -5,24 +5,24 @@ import org.scalatest.matchers.should.Matchers
 
 class SprayJsonTest extends AnyFunSuite with Matchers {
   test("spray json") {
-    import ColorCodecs._
+    import SprayJsonCodecs._
     import spray.json._
 
-    val navy = Navy("navy", "#000080")
-    val navyJson = navy.toJson
+    val employee = Employee(1, "James Bond")
+    val employeeJson = employee.toJson
 
-    println(s"spray json navy: $navy")
-    println(s"spray json navy json: $navyJson")
+    println(s"spray json employee: $employee")
+    println(s"spray json employee json: $employeeJson")
 
-    navy shouldBe navyJson.convertTo[Navy]
+    employee shouldBe employeeJson.convertTo[Employee]
 
-    val color = navy.asInstanceOf[Color]
-    color.isInstanceOf[Color] shouldBe true
-    val colorJson = ColorCodecs.write(color)
+    val person = employee.asInstanceOf[Person]
+    person.isInstanceOf[Person] shouldBe true
+    val personJson = SprayJsonCodecs.write(person)
 
-    println(s"spray json color: $color")
-    println(s"spray json color json: $colorJson")
+    println(s"spray json person: $person")
+    println(s"spray json person json: $personJson")
 
-    color shouldBe ColorCodecs.read(colorJson)
+    person shouldBe SprayJsonCodecs.read(personJson)
   }
 }
