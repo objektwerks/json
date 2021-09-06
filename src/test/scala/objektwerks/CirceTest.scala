@@ -3,29 +3,26 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-sealed trait Work extends Product with Serializable
-final case class Task(worker: String, work: String) extends Work
-
 class CirceTest extends AnyFunSuite with Matchers {
   test("circe") {
     import io.circe.generic.auto._
     import io.circe.syntax._
 
-    val task = Task("auric goldfinger", "stack gold")
-    val taskJson = task.asJson
+    val employee = Employee(1, "james bond")
+    val employeeJson = employee.asJson
 
-    println(s"circe task: $task")
-    println(s"circe task as json: $taskJson")
+    println(s"circe employee: $employee")
+    println(s"circe employee json: $employeeJson")
 
-    task shouldBe taskJson.as[Task].toOption.get
+    employee shouldBe employeeJson.as[Employee].toOption.get
 
-    val work = task.asInstanceOf[Work]
-    work.isInstanceOf[Work] shouldBe true
-    val workJson = work.asJson
+    val person = employee.asInstanceOf[Person]
+    person.isInstanceOf[Person] shouldBe true
+    val personJson = person.asJson
 
-    println(s"circe work: $work")
-    println(s"circe work as json: $workJson")
+    println(s"circe person: $person")
+    println(s"circe person json: $personJson")
 
-    work shouldBe workJson.as[Work].toOption.get
+    person shouldBe personJson.as[Person].toOption.get
   }
 }
