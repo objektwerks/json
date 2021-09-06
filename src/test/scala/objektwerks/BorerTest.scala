@@ -16,10 +16,10 @@ class BorerTest extends AnyFunSuite with Matchers {
     println(s"borer employee json: $employeeJson")
 
     val person = employee.asInstanceOf[Person]
-    val canineJson = Json.encode(person).toUtf8String
-    person shouldBe Json.decode(canineJson.getBytes("UTF8")).to[Person].value
+    val personJson = Json.encode(person).toUtf8String
+    person shouldBe Json.decode(personJson.getBytes("UTF8")).to[Person].value
 
     println(s"borer person: $person")
-    println(s"borer person json: $canineJson")
+    println(s"borer person json: $personJson")
   }
 }
