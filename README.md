@@ -5,17 +5,16 @@ Scala Json
 1. Jsoniter : 15
 2. SprayJson : 23
 3. uPickle : 25
-4. Borer : 26
+4. Borer : 25
 5. Circe : 123
-6. ZioJson : 145
-7. PlayJson : 152
+6. ZioJson : 136
+7. PlayJson : 149
 
->The top 4 and bottom 3 json libraries form a 2-tier eco-system, in terms of performance.
+>The top 4 and bottom 3 json libraries form a 2-tier ecosystem, in terms of performance.
 
 Notes
 -----
-1. Tests implement a common template, with UPicleTest being a bit more involved.
-2. So performance numbers should ***not*** be taken ***too*** seriously.
+1. Tests implement a common test.
 3. Jsoniter, uPickle, Borer, Circe, ZioJson and PlayJson suport **ScalaJs**.
 
 Test
