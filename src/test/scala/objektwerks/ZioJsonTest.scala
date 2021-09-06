@@ -17,7 +17,6 @@ class ZioJsonTest extends AnyFunSuite with Matchers {
     employee shouldBe employeeJson.fromJson[Employee].getOrElse( Employee(0, "") )
 
     val person = employee.asInstanceOf[Person]
-    person.isInstanceOf[Person] shouldBe true
     val personJson = person.toJson
 
     println(s"zio person: $person")
