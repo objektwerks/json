@@ -10,7 +10,7 @@ import org.openjdk.jmh.annotations._
 @Warmup(iterations = 10)
 @Measurement(iterations = 10)
 @Fork(1)
-class JsonLibraryPerformance {
+class Performance {
   @Benchmark
   def borer(): Boolean = {
     import BorerCodecs._
