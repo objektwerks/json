@@ -14,22 +14,23 @@ Benchmark
 ---------
 >See Performance class for details.
 1. sbt jmh:run
-* Benchmark  Mode  Cnt  Score   Error  Units
-* jsoniter   avgt    3  0.136 ± 0.002  us/op
-* borer      avgt    3  0.230 ± 0.002  us/op
-* circe      avgt    3  0.294 ± 0.001  us/op
-* sprayjson  avgt    3  0.312 ± 0.003  us/op
-* ziojson    avgt    3  0.442 ± 0.027  us/op
-* upickle    avgt    3  0.454 ± 0.001  us/op
-* playjson   avgt    3  1.539 ± 0.010  us/op
->Total time: 424 s (07:04), completed Sep 7, 2021 7:50:46 AM
 
-* Benchmark  Mode  Cnt  Score    Error  Units
-* jsoniter   avgt   10  0.103 ±  0.001  us/op
-* borer      avgt   10  0.226 ±  0.001  us/op
-* circe      avgt   10  0.288 ±  0.001  us/op
-* sprayjson  avgt   10  0.311 ±  0.001  us/op
-* ziojson    avgt   10  0.440 ±  0.001  us/op
-* upickle    avgt   10  0.448 ±  0.001  us/op
-* playjson   avgt   10  1.562 ±  0.005  us/op
->Total time: 1405 s (23:25), completed Sep 7, 2021 8:25:23 AM
+Results
+-------
+1. jsoniter - 0.136
+2. borer - 0.230
+3. circe - 0.294
+4. sprayjson - 0.312
+5. ziojson - 0.442
+6. upickle - 0.454
+7. playjson - 1.539
+>Total time: 07:04, 3 warmups, 3 iterations, in microseconds, completed 2021.9.7
+
+1. jsoniter - 0.103
+2. borer - 0.226
+3. circe - 0.288
+4. sprayjson - 0.311
+5. ziojson - 0.440
+6. upickle - 0.448
+7. playjson - 1.562
+>Total time: 23:25, 10 warmups, 10 iterations, in microseconds, completed 2021.9.7
