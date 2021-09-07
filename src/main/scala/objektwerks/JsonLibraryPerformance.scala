@@ -73,5 +73,11 @@ class JsonLibraryPerformance {
 
   @Benchmark
   def ziojson(): Boolean = {
+    import ZioJsonCodecs._
+    import zio.json._
+
+    val employee = Employees.newEmployee
+    val employeeJson = employee.toJson
+    employee == employeeJson.fromJson[Employee].getOrElse( Employee(0, "") )
   }
 }
