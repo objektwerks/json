@@ -21,4 +21,13 @@ class JsonLibraryPerformance {
     assert( employee == Json.decode(employeeJson.getBytes("UTF8")).to[Employee].value )
   }
 
+  @Benchmark
+  def circe(): Unit = {
+    import io.circe.generic.auto._
+    import io.circe.syntax._
+
+    val employee = Employees.newEmployee
+    val employeeJson = employee.asJson
+    assert( employee == employeeJson.as[Employee].toOption.get )
+  }
 }
