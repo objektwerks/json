@@ -16,69 +16,69 @@ import upickle.default._
 @Fork(1)
 class Performance {
   @Benchmark
-  def borer(): Boolean = {
+  def borer(): Unit = {
     import BorerCodecs._
     import io.bullet.borer.Json
 
     val employee = Employees.newEmployee
     val employeeJson = Json.encode(employee).toUtf8String
-    employee == Json.decode(employeeJson.getBytes("UTF8")).to[Employee].value
+    assert( employee == Json.decode(employeeJson.getBytes("UTF8")).to[Employee].value )
   }
 
   @Benchmark
-  def circe(): Boolean = {
+  def circe(): Unit = {
     import io.circe.generic.auto._
     import io.circe.syntax._
 
     val employee = Employees.newEmployee
     val employeeJson = employee.asJson
-    employee == employeeJson.as[Employee].toOption.get
+    assert( employee == employeeJson.as[Employee].toOption.get )
   }
 
   @Benchmark
-  def jsoniter(): Boolean = {
+  def jsoniter(): Unit = {
     import JsoniterCodecs._
     import com.github.plokhotnyuk.jsoniter_scala.core._
 
     val employee = Employees.newEmployee
     val employeeJson = writeToString[Employee](employee)
-    employee == readFromString[Employee](employeeJson)
+    assert( employee == readFromString[Employee](employeeJson) )
   }
 
   @Benchmark
-  def playjson(): Boolean = {
+  def playjson(): Unit = {
     import PlayJsonCodecs._
     import play.api.libs.json.Json
 
     val employee = Employees.newEmployee
     val employeeJson = Json.toJson(employee).toString
-    employee == Json.parse(employeeJson).as[Employee]
+    assert( employee == Json.parse(employeeJson).as[Employee] )
   }
 
   @Benchmark
-  def sprayjson(): Boolean = {
+  def sprayjson(): Unit = {
     import SprayJsonCodecs._
     import spray.json._
 
     val employee = Employees.newEmployee
     val employeeJson = employee.toJson
-    employee == employeeJson.convertTo[Employee]
+    assert( employee == employeeJson.convertTo[Employee] )
   }
 
   @Benchmark
-  def upickle(): Boolean = {
+  def upickle(): Unit = {
     val employee = Employees.newEmployee
     val employeeJson = write(employee)
-    employee == read[Employee](employeeJson)
+    assert( employee == read[Employee](employeeJson) )
   }
 
   @Benchmark
-  def ziojson(): Boolean = {
+  def ziojson(): Unit = {
     import ZioJsonCodecs._
     import zio.json._
 
     val employee = Employees.newEmployee
     val employeeJson = employee.toJson
-    employee == employeeJson.fromJson[Employee].getOrElse( Employee(0, "") )
+    assert( employee == employeeJson.fromJson[Employee].getOrElse( Employee(0, "") ) )
   }
 }
