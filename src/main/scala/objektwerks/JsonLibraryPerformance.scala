@@ -30,4 +30,30 @@ class JsonLibraryPerformance {
     val employeeJson = employee.asJson
     employee == employeeJson.as[Employee].toOption.get
   }
+
+  @Benchmark
+  def jsoniter(): Boolean = {
+    import JsoniterCodecs._
+    import com.github.plokhotnyuk.jsoniter_scala.core._
+
+    val employee = Employees.newEmployee
+    val employeeJson = writeToString[Employee](employee)
+    employee == readFromString[Employee](employeeJson)
+  }
+
+  @Benchmark
+  def playjson(): Boolean = {
+  }
+
+  @Benchmark
+  def sprayjson(): Boolean = {
+  }
+
+  @Benchmark
+  def upickle(): Boolean = {
+  }
+
+  @Benchmark
+  def ziojson(): Boolean = {
+  }
 }
