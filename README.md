@@ -5,22 +5,20 @@ Scala Json
 Test
 ----
 1. sbt clean test
->Performance in milliseconds:
-
-1. Jsoniter : 13
-2. SprayJson : 23
-3. uPickle : 24
-4. Borer : 25
-5. Circe : 123
-6. ZioJson : 132
-7. PlayJson : 149
-
->The top 4 and bottom 3 json libraries form a 2-tier ecosystem, in terms of performance.
-
-ScalaJs
--------
->Jsoniter, uPickle, Borer, Circe, ZioJson and PlayJson suport **ScalaJs**.
 
 Benchmark
 ---------
 1. sbt jmh:run
+* Benchmark  Mode  Cnt  Score   Error  Units
+* jsoniter   avgt    3  0.136 ± 0.002  us/op
+* borer      avgt    3  0.230 ± 0.002  us/op
+* circe      avgt    3  0.294 ± 0.001  us/op
+* sprayjson  avgt    3  0.312 ± 0.003  us/op
+* ziojson    avgt    3  0.442 ± 0.027  us/op
+* upickle    avgt    3  0.454 ± 0.001  us/op
+* playjson   avgt    3  1.539 ± 0.010  us/op
+>Total time: 424 s (07:04), completed Sep 7, 2021 7:50:46 AM
+
+ScalaJs
+-------
+>Jsoniter, uPickle, Borer, Circe, ZioJson and PlayJson suport **ScalaJs**.
