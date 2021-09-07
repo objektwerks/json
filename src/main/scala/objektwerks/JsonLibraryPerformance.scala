@@ -53,6 +53,12 @@ class JsonLibraryPerformance {
 
   @Benchmark
   def sprayjson(): Boolean = {
+    import SprayJsonCodecs._
+    import spray.json._
+
+    val employee = Employees.newEmployee
+    val employeeJson = employee.toJson
+    employee == employeeJson.convertTo[Employee]
   }
 
   @Benchmark
