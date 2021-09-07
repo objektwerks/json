@@ -12,22 +12,22 @@ import org.openjdk.jmh.annotations._
 @Fork(1)
 class JsonLibraryPerformance {
   @Benchmark
-  def borer(): Unit = {
+  def borer(): Boolean = {
     import BorerCodecs._
     import io.bullet.borer.Json
 
     val employee = Employees.newEmployee
     val employeeJson = Json.encode(employee).toUtf8String
-    assert( employee == Json.decode(employeeJson.getBytes("UTF8")).to[Employee].value )
+    employee == Json.decode(employeeJson.getBytes("UTF8")).to[Employee].value
   }
 
   @Benchmark
-  def circe(): Unit = {
+  def circe(): Boolean = {
     import io.circe.generic.auto._
     import io.circe.syntax._
 
     val employee = Employees.newEmployee
     val employeeJson = employee.asJson
-    assert( employee == employeeJson.as[Employee].toOption.get )
+    employee == employeeJson.as[Employee].toOption.get
   }
 }
