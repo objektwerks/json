@@ -63,6 +63,12 @@ class JsonLibraryPerformance {
 
   @Benchmark
   def upickle(): Boolean = {
+    import UPickleCodecs._
+    import upickle.default._
+
+    val employee = Employees.newEmployee
+    val employeeJson = write(employee)
+    employee == read[Employee](employeeJson)
   }
 
   @Benchmark
