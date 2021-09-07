@@ -1,6 +1,11 @@
 Scala Json
 ----------
->Scala json library test performance in milliseconds:
+>Scala json library benchmark and common test.
+
+Test
+----
+1. sbt clean test
+>Performance in milliseconds:
 
 1. Jsoniter : 13
 2. SprayJson : 23
@@ -12,11 +17,10 @@ Scala Json
 
 >The top 4 and bottom 3 json libraries form a 2-tier ecosystem, in terms of performance.
 
-Notes
------
-1. Tests implement a common test.
-3. Jsoniter, uPickle, Borer, Circe, ZioJson and PlayJson suport **ScalaJs**.
+ScalaJs
+-------
+>Jsoniter, uPickle, Borer, Circe, ZioJson and PlayJson suport **ScalaJs**.
 
-Test
-----
-1. sbt clean test
+Benchmark
+---------
+1. sbt jmh:run
