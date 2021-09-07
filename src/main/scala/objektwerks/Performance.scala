@@ -4,6 +4,10 @@ import java.util.concurrent.TimeUnit
 
 import org.openjdk.jmh.annotations._
 
+// uPickle imports fail in benchmark method!
+import UPickleCodecs._
+import upickle.default._
+
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.AverageTime))
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
@@ -63,9 +67,6 @@ class Performance {
 
   @Benchmark
   def upickle(): Boolean = {
-    import UPickleCodecs._
-    import upickle.default._
-
     val employee = Employees.newEmployee
     val employeeJson = write(employee)
     employee == read[Employee](employeeJson)
