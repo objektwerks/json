@@ -43,6 +43,12 @@ class JsonLibraryPerformance {
 
   @Benchmark
   def playjson(): Boolean = {
+    import PlayJsonCodecs._
+    import play.api.libs.json.Json
+
+    val employee = Employees.newEmployee
+    val employeeJson = Json.toJson(employee).toString
+    employee == Json.parse(employeeJson).as[Employee]
   }
 
   @Benchmark
