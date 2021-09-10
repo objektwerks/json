@@ -1,6 +1,6 @@
 Scala Json
 ----------
->Scala json library benchmark and common test.
+>Scala json library common tests and performance benchmark.
 
 ScalaJs
 -------
