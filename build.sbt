@@ -25,6 +25,6 @@ libraryDependencies ++= {
     "com.lihaoyi" %% "upickle" % upickleVersion,
     "dev.zio" %% "zio" % zioVersion,
     "dev.zio" %% "zio-json" % zioJsonVersion,
-    "org.scalatest" %% "scalatest" % "3.2.9" % Test
+    "org.scalatest" %% "scalatest" % "3.2.10" % Test
   )
 }
