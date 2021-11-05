@@ -18,15 +18,6 @@ Benchmark
 Results
 -------
 >OpenJDK Runtime Environment (Zulu 8.56.0.23-CA-macos-aarch64) (build 1.8.0_302-b08)
-1. jsoniter - 0.136
-2. borer - 0.230
-3. circe - 0.294
-4. sprayjson - 0.312
-5. ziojson - 0.442
-6. upickle - 0.454
-7. playjson - 1.539
->Total time: 07:04, 3 warmups, 3 iterations, in microseconds, completed 2021.9.7
-
 1. jsoniter - 0.103
 2. borer - 0.226
 3. circe - 0.288
