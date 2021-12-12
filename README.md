@@ -1,10 +1,7 @@
 Scala Json
 ----------
->Scala json library common tests and performance benchmark.
-
-ScalaJs
--------
->Jsoniter, uPickle, Borer, Circe, ZioJson and PlayJson suport **ScalaJs**.
+>Feature tests and performance benchmarks across 7 Scala json libraries:
+* Jsoniter, Borer, Circe, SprayJson, ZioJson, uPickle and PlayJson.
 
 Test
 ----
