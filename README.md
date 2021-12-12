@@ -14,7 +14,7 @@ Benchmark
 
 Results
 -------
->OpenJDK Runtime Environment (Zulu 8.56.0.23-CA-macos-aarch64) (build 1.8.0_302-b08)
+>OpenJDK Runtime Environment Zulu17.30+51-CA (build 17.0.1+12-LTS)
 1. jsoniter - 0.105
 2. borer - 0.201
 3. circe - 0.288
