@@ -14,7 +14,7 @@ Benchmark
 
 Results
 -------
->OpenJDK Runtime Environment Zulu17.30+51-CA (build 17.0.1+12-LTS)
+>OpenJDK Runtime Environment Zulu17.30+51-CA (build 17.0.1+12-LTS), Scala 2.13.7
 1. jsoniter - 0.105
 2. borer - 0.201
 3. circe - 0.288
