@@ -10,7 +10,7 @@ libraryDependencies ++= {
   val jsoniterVersion = "2.12.0"
   val playJsonVersion = "2.9.2"
   val sprayJsonVersion = "1.3.6"
-  val upickleVersion = "1.4.2"
+  val upickleVersion = "1.4.3"
   val zioVersion = "1.0.12"
   val zioJsonVersion = "0.1.5"
   Seq(
