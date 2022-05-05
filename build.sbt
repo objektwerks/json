@@ -11,7 +11,7 @@ libraryDependencies ++= {
   val playJsonVersion = "2.9.2"
   val sprayJsonVersion = "1.3.6"
   val upickleVersion = "1.6.0"
-  val zioVersion = "1.0.13"
+  val zioVersion = "1.0.14"
   val zioJsonVersion = "0.1.5"
   Seq(
     "io.bullet" %% "borer-core" % borerVersion,
