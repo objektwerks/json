@@ -1,12 +1,21 @@
 package objektwerks
 
+import com.github.plokhotnyuk.jsoniter_scala.core.*
+
+import io.circe.generic.auto.*
+import io.circe.syntax.*
+
 import java.util.concurrent.TimeUnit
 
-import org.openjdk.jmh.annotations._
+import org.openjdk.jmh.annotations.*
 
-// uPickle imports fail in benchmark method!
+import upickle.default.*
+
+import zio.json._
+
+import JsoniterCodecs.*
 import UPickleCodecs.given
-import upickle.default._
+import ZioJsonCodecs.given
 
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.AverageTime))
@@ -17,18 +26,12 @@ import upickle.default._
 class Performance:
   @Benchmark
   def circe(): Unit =
-    import io.circe.generic.auto._
-    import io.circe.syntax._
-
     val employee = Employees.newEmployee
     val employeeJson = employee.asJson
     assert( employee == employeeJson.as[Employee].toOption.get )
 
   @Benchmark
   def jsoniter(): Unit =
-    import JsoniterCodecs._
-    import com.github.plokhotnyuk.jsoniter_scala.core._
-
     val employee = Employees.newEmployee
     val employeeJson = writeToString[Employee](employee)
     assert( employee == readFromString[Employee](employeeJson) )
@@ -41,9 +44,6 @@ class Performance:
 
   @Benchmark
   def ziojson(): Unit =
-    import ZioJsonCodecs.given
-    import zio.json._
-
     val employee = Employees.newEmployee
     val employeeJson = employee.toJson
-    assert( employee == employeeJson.fromJson[Employee].getOrElse( Employee(0, "") ) )
+    assert( employee == employeeJson.fromJson[Employee].toOption.get )
