@@ -1,7 +1,7 @@
 package objektwerks
 
 object ZioJsonCodecs:
-  import zio.json._
+  import zio.json.*
 
   given personDecoder: JsonDecoder[Person] = DeriveJsonDecoder.gen[Person]
   given personEncoder: JsonEncoder[Person] = DeriveJsonEncoder.gen[Person]
