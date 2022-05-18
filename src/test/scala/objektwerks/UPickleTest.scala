@@ -5,7 +5,7 @@ import org.scalatest.matchers.should.Matchers
 
 class UPickleTest extends AnyFunSuite with Matchers:
   test("upickle") {
-    import UPickleCodecs._
+    import UPickleCodecs.given
     import upickle.default._
 
     val employee = Employees.newEmployee
