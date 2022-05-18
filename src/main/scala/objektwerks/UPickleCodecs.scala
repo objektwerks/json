@@ -1,7 +1,7 @@
 package objektwerks
 
-object UPickleCodecs;
-  import upickle.default._
+object UPickleCodecs:
+  import upickle.default.*
 
   given employeeRW: ReadWriter[Employee] = macroRW
   given personRW: ReadWriter[Person] = ReadWriter.merge( macroRW[Employee] )
