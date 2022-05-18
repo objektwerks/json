@@ -3,7 +3,7 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-class JsoniterTest extends AnyFunSuite with Matchers {
+class JsoniterTest extends AnyFunSuite with Matchers:
   test("jsoniter") {
     import JsoniterCodecs._
     import com.github.plokhotnyuk.jsoniter_scala.core._
@@ -23,4 +23,3 @@ class JsoniterTest extends AnyFunSuite with Matchers {
     println(s"jsoniter person: $person")
     println(s"jsoniter person json: $personJson")
   }
-}
