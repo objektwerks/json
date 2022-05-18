@@ -16,16 +16,6 @@ import upickle.default._
 @Fork(1)
 class Performance {
   @Benchmark
-  def borer(): Unit = {
-    import BorerCodecs._
-    import io.bullet.borer.Json
-
-    val employee = Employees.newEmployee
-    val employeeJson = Json.encode(employee).toUtf8String
-    assert( employee == Json.decode(employeeJson.getBytes("UTF8")).to[Employee].value )
-  }
-
-  @Benchmark
   def circe(): Unit = {
     import io.circe.generic.auto._
     import io.circe.syntax._
