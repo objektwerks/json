@@ -3,10 +3,11 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
+import upickle.default.*
+
 class UPickleTest extends AnyFunSuite with Matchers:
   test("upickle") {
     import UPickleCodecs.given
-    import upickle.default._
 
     val employee = Employees.newEmployee
     val employeeJson = write(employee)
