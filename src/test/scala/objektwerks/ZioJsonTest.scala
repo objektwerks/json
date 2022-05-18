@@ -3,10 +3,11 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
+import zio.json.*
+
 class ZioJsonTest extends AnyFunSuite with Matchers:
   test("zio") {
     import ZioJsonCodecs.given
-    import zio.json._
 
     val employee = Employees.newEmployee
     val employeeJson = employee.toJson
