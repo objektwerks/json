@@ -1,7 +1,8 @@
-Scala Json
-----------
->Feature tests and performance benchmarks across 7 Scala json libraries:
+Scala 3 Json
+------------
+>Feature tests and performance benchmarks across 4 Scala 3 json libraries:
 * Jsoniter, Circe, uPickle, ZioJson
+>Borer, Play-Json and Scala-Json were removed due to **no** or **poor** Scala 3 support.
 
 Test
 ----
