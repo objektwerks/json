@@ -3,7 +3,7 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-class UPickleTest extends AnyFunSuite with Matchers {
+class UPickleTest extends AnyFunSuite with Matchers:
   test("upickle") {
     import UPickleCodecs._
     import upickle.default._
@@ -22,4 +22,3 @@ class UPickleTest extends AnyFunSuite with Matchers {
     println(s"upickle person: $person")
     println(s"upickle person json: $personJson")
   }
-}
