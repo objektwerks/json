@@ -14,41 +14,36 @@ import upickle.default._
 @Warmup(iterations = 10)
 @Measurement(iterations = 10)
 @Fork(1)
-class Performance {
+class Performance:
   @Benchmark
-  def circe(): Unit = {
+  def circe(): Unit =
     import io.circe.generic.auto._
     import io.circe.syntax._
 
     val employee = Employees.newEmployee
     val employeeJson = employee.asJson
     assert( employee == employeeJson.as[Employee].toOption.get )
-  }
 
   @Benchmark
-  def jsoniter(): Unit = {
+  def jsoniter(): Unit =
     import JsoniterCodecs._
     import com.github.plokhotnyuk.jsoniter_scala.core._
 
     val employee = Employees.newEmployee
     val employeeJson = writeToString[Employee](employee)
     assert( employee == readFromString[Employee](employeeJson) )
-  }
 
   @Benchmark
-  def upickle(): Unit = {
+  def upickle(): Unit =
     val employee = Employees.newEmployee
     val employeeJson = write(employee)
     assert( employee == read[Employee](employeeJson) )
-  }
 
   @Benchmark
-  def ziojson(): Unit = {
+  def ziojson(): Unit =
     import ZioJsonCodecs._
     import zio.json._
 
     val employee = Employees.newEmployee
     val employeeJson = employee.toJson
     assert( employee == employeeJson.fromJson[Employee].getOrElse( Employee(0, "") ) )
-  }
-}
