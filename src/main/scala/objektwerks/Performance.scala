@@ -11,7 +11,7 @@ import org.openjdk.jmh.annotations.*
 
 import upickle.default.*
 
-import zio.json._
+import zio.json.*
 
 import JsoniterCodecs.*
 import UPickleCodecs.given
