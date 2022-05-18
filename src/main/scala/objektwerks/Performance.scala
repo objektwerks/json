@@ -36,26 +36,6 @@ class Performance {
   }
 
   @Benchmark
-  def playjson(): Unit = {
-    import PlayJsonCodecs._
-    import play.api.libs.json.Json
-
-    val employee = Employees.newEmployee
-    val employeeJson = Json.toJson(employee).toString
-    assert( employee == Json.parse(employeeJson).as[Employee] )
-  }
-
-  @Benchmark
-  def sprayjson(): Unit = {
-    import SprayJsonCodecs._
-    import spray.json._
-
-    val employee = Employees.newEmployee
-    val employeeJson = employee.toJson
-    assert( employee == employeeJson.convertTo[Employee] )
-  }
-
-  @Benchmark
   def upickle(): Unit = {
     val employee = Employees.newEmployee
     val employeeJson = write(employee)
