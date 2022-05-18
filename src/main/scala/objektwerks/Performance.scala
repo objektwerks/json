@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit
 import org.openjdk.jmh.annotations._
 
 // uPickle imports fail in benchmark method!
-import UPickleCodecs._
+import UPickleCodecs.given
 import upickle.default._
 
 @State(Scope.Thread)
@@ -41,7 +41,7 @@ class Performance:
 
   @Benchmark
   def ziojson(): Unit =
-    import ZioJsonCodecs._
+    import ZioJsonCodecs.given
     import zio.json._
 
     val employee = Employees.newEmployee

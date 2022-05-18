@@ -5,7 +5,7 @@ import org.scalatest.matchers.should.Matchers
 
 class ZioJsonTest extends AnyFunSuite with Matchers:
   test("zio") {
-    import ZioJsonCodecs._
+    import ZioJsonCodecs.given
     import zio.json._
 
     val employee = Employees.newEmployee
