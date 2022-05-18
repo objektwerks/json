@@ -1,12 +1,13 @@
 package objektwerks
 
+import com.github.plokhotnyuk.jsoniter_scala.core.*
+
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
 class JsoniterTest extends AnyFunSuite with Matchers:
   test("jsoniter") {
     import JsoniterCodecs._
-    import com.github.plokhotnyuk.jsoniter_scala.core._
 
     val employee = Employees.newEmployee
     val employeeJson = writeToString[Employee](employee)
