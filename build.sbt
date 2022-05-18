@@ -1,6 +1,6 @@
 enablePlugins(JmhPlugin)
 
-name := "scala.json"
+name := "scala3.json"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
 scalaVersion := "3.1.3-RC3"
