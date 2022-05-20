@@ -1,6 +1,7 @@
 package objektwerks
 
 sealed trait Person:
+  def id: Int
   def name: String
 
 final case class Employee(id: Int, name: String) extends Person
