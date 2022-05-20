@@ -18,8 +18,7 @@ class JsoniterTest extends AnyFunSuite with Matchers:
     
     val person = employee.asInstanceOf[Person]
     val personJson = writeToString[Person](person)
-    // Jsoniter DOES NOT write an ADT type to personJson.
-    // person shouldBe readFromString[Person](personJson)
+    person shouldBe readFromString[Person](personJson)
 
     println(s"jsoniter person: $person")
     println(s"jsoniter person json: $personJson")
