@@ -4,4 +4,4 @@ object UPickleCodecs:
   import upickle.default.*
 
   given employeeRW: ReadWriter[Employee] = macroRW
-  given personRW: ReadWriter[Person] = ReadWriter.merge( macroRW[Employee] )
+  given personRW: ReadWriter[Person] = ReadWriter.merge( employeeRW )
