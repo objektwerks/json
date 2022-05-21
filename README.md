@@ -13,7 +13,7 @@ Test
 
 Benchmark
 ---------
->See Performance class for details.
+>See objektwerks.Performance class for details.
 1. sbt jmh:run
 
 Results
