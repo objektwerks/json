@@ -8,7 +8,7 @@ libraryDependencies ++= {
   val circeVersion = "0.14.2"
   val jsoniterVersion = "2.13.37"
   val upickleVersion = "2.0.0"
-  val zioJsonVersion = "0.3.0-RC8"
+  val zioJsonVersion = "0.3.0-RC10"
   Seq(
     "io.circe" %% "circe-parser" % circeVersion,
     "io.circe" %% "circe-generic" % circeVersion,
