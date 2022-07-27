@@ -18,6 +18,13 @@ Benchmark
 
 Results
 -------
+>OpenJDK Runtime Environment Zulu18.30+11-CA (build 18.0.1+10), **Scala 3.2.0-RC2**, Apple M1
+1. jsoniter - 0.122
+2. circe - 0.180
+3. ziojson - 0.329
+4. upickle - 1.003
+>Total time: 803 s (13:23), 10 warmups, 10 iterations, in microseconds, completed **2022.7.27**
+
 >OpenJDK Runtime Environment Zulu17.32+13-CA (build 17.0.2+8-LTS), **Scala 3.1.3-RC3**, Apple M1
 1. jsoniter - 0.124
 2. circe - 0.181
