@@ -25,13 +25,6 @@ Results
 4. upickle - 1.003
 >Total time: 803 s (13:23), 10 warmups, 10 iterations, in microseconds, completed **2022.7.27**
 
->OpenJDK Runtime Environment Zulu17.32+13-CA (build 17.0.2+8-LTS), **Scala 3.1.3-RC3**, Apple M1
-1. jsoniter - 0.124
-2. circe - 0.181
-3. ziojson - 0.331
-4. upickle - 0.976
->Total time: 804 s (13:24), 10 warmups, 10 iterations, in microseconds, completed **2022.5.18**
-
 >OpenJDK Runtime Environment Zulu17.30+51-CA (build 17.0.1+12-LTS), **Scala 2.13.7**, Apple M1
 1. sprayjson - 0.071
 2. jsoniter - 0.126
