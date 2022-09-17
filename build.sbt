@@ -16,6 +16,6 @@ libraryDependencies ++= {
     "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-macros" % jsoniterVersion % Provided,
     "com.lihaoyi" %% "upickle" % upickleVersion,
     "dev.zio" %% "zio-json" % zioJsonVersion,
-    "org.scalatest" %% "scalatest" % "3.2.12" % Test
+    "org.scalatest" %% "scalatest" % "3.2.13" % Test
   )
 }
