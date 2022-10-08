@@ -6,7 +6,7 @@ version := "0.1-SNAPSHOT"
 scalaVersion := "3.2.1-RC2"
 libraryDependencies ++= {
   val circeVersion = "0.14.3"
-  val jsoniterVersion = "2.15.0"
+  val jsoniterVersion = "2.17.5"
   val upickleVersion = "2.0.0"
   val zioJsonVersion = "0.3.0-RC11"
   Seq(
