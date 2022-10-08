@@ -18,7 +18,7 @@ Benchmark
 
 Results
 -------
->OpenJDK Runtime Environment Zulu18.30+11-CA (build 18.0.1+10), **Scala 3.2.1-RC2**, Apple M1
+>OpenJDK Runtime Environment Zulu19.28+81-CA (build 19+36), **Scala 3.2.1-RC2**, Apple M1
 1. jsoniter - 0.122
 2. circe - 0.180
 3. ziojson - 0.329
