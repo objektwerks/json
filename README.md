@@ -5,7 +5,7 @@ Scala 3 Json
 2. Jsoniter
 3. uPickle
 4. ZioJson
-5. Spray-Json ( just readded on 2022.12.4 )
+5. Spray-Json ( readded on 2022.12.4 )
 
 Test
 ----
