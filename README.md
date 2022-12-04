@@ -5,8 +5,7 @@ Scala 3 Json
 2. Jsoniter
 3. uPickle
 4. ZioJson
->Borer, Play-Json and Spray-Json were removed due to ***no*** or ***poor*** Scala 3 support.
->**NOTE:** All 3 json libraries now have Scala 3 support and can be added back (2022.12.4).
+5. Spray-Json ( just readded on 2022.12.4 )
 
 Test
 ----
