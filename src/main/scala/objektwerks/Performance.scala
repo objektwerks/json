@@ -4,11 +4,6 @@ import java.util.concurrent.TimeUnit
 
 import org.openjdk.jmh.annotations.*
 
-import JsoniterCodecs.*
-import SprayJsonCodecs.given
-import UPickleCodecs.given
-import ZioJsonCodecs.given
-
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.AverageTime))
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
@@ -28,6 +23,7 @@ class Performance:
   @Benchmark
   def jsoniterBenchmark(): Unit =
     import com.github.plokhotnyuk.jsoniter_scala.core.*
+    import JsoniterCodecs.*
 
     val employee = Employees.newEmployee
     val employeeJson = writeToString[Employee](employee)
@@ -36,6 +32,7 @@ class Performance:
   @Benchmark
   def upickleBenchmark(): Unit =
     import upickle.default.*
+    import UPickleCodecs.given
 
     val employee = Employees.newEmployee
     val employeeJson = write(employee)
@@ -44,6 +41,7 @@ class Performance:
   @Benchmark
   def zioJsonBenchmark(): Unit =
     import zio.json.*
+    import ZioJsonCodecs.given
 
     val employee = Employees.newEmployee
     val employeeJson = employee.toJson
@@ -52,6 +50,7 @@ class Performance:
   @Benchmark
   def sprayJsonBenchmark(): Unit =
     import spray.json.*
+    import SprayJsonCodecs.given
 
     val employee = Employees.newEmployee
     val employeeJson = employee.toJson
