@@ -1,17 +1,8 @@
 package objektwerks
 
-import com.github.plokhotnyuk.jsoniter_scala.core.*
-
-import io.circe.generic.auto.*
-import io.circe.syntax.*
-
 import java.util.concurrent.TimeUnit
 
 import org.openjdk.jmh.annotations.*
-
-import upickle.default.*
-
-import zio.json.*
 
 import JsoniterCodecs.*
 import SprayJsonCodecs.given
@@ -26,31 +17,40 @@ import ZioJsonCodecs.given
 @Fork(1)
 class Performance:
   @Benchmark
-  def circe(): Unit =
+  def circeBenchmark(): Unit =
+    import io.circe.generic.auto.*
+    import io.circe.syntax.*
+
     val employee = Employees.newEmployee
     val employeeJson = employee.asJson
     assert( employee == employeeJson.as[Employee].toOption.get )
 
   @Benchmark
-  def jsoniter(): Unit =
+  def jsoniterBenchmark(): Unit =
+    import com.github.plokhotnyuk.jsoniter_scala.core.*
+
     val employee = Employees.newEmployee
     val employeeJson = writeToString[Employee](employee)
     assert( employee == readFromString[Employee](employeeJson) )
 
   @Benchmark
-  def upickle(): Unit =
+  def upickleBenchmark(): Unit =
+    import upickle.default.*
+
     val employee = Employees.newEmployee
     val employeeJson = write(employee)
     assert( employee == read[Employee](employeeJson) )
 
   @Benchmark
-  def ziojson(): Unit =
+  def zioJsonBenchmark(): Unit =
+    import zio.json.*
+
     val employee = Employees.newEmployee
     val employeeJson = employee.toJson
     assert( employee == employeeJson.fromJson[Employee].toOption.get )
 
   @Benchmark
-  def sprayjson(): Unit =
+  def sprayJsonBenchmark(): Unit =
     import spray.json.*
 
     val employee = Employees.newEmployee
