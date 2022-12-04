@@ -5,7 +5,7 @@ Scala 3 Json
 2. Jsoniter
 3. uPickle
 4. ZioJson
->Borer, Play-Json and Scala-Json were removed due to ***no*** or ***poor*** Scala 3 support.
+>Borer, Play-Json and Spray-Json were removed due to ***no*** or ***poor*** Scala 3 support.
 
 Test
 ----
