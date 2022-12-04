@@ -47,3 +47,12 @@ class Performance:
     val employee = Employees.newEmployee
     val employeeJson = employee.toJson
     assert( employee == employeeJson.fromJson[Employee].toOption.get )
+
+  @Benchmark
+  def sprayjson(): Unit =
+    import SprayJsonCodecs.given
+    import spray.json.*
+
+    val employee = Employees.newEmployee
+    val employeeJson = employee.toJson
+    assert( employee == employeeJson.convertTo[Employee] )
