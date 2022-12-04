@@ -14,6 +14,7 @@ import upickle.default.*
 import zio.json.*
 
 import JsoniterCodecs.*
+import SprayJsonCodecs.given
 import UPickleCodecs.given
 import ZioJsonCodecs.given
 
@@ -50,7 +51,6 @@ class Performance:
 
   @Benchmark
   def sprayjson(): Unit =
-    import SprayJsonCodecs.given
     import spray.json.*
 
     val employee = Employees.newEmployee
