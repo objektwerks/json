@@ -9,6 +9,7 @@ libraryDependencies ++= {
   val jsoniterVersion = "2.18.1"
   val upickleVersion = "2.0.0"
   val zioJsonVersion = "0.3.0"
+  val sprayJsonVersion = "1.3.6"
   Seq(
     "io.circe" %% "circe-parser" % circeVersion,
     "io.circe" %% "circe-generic" % circeVersion,
@@ -16,7 +17,7 @@ libraryDependencies ++= {
     "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-macros" % jsoniterVersion % Provided,
     "com.lihaoyi" %% "upickle" % upickleVersion,
     "dev.zio" %% "zio-json" % zioJsonVersion,
-    "io.spray" %% "spray-json" % "1.3.6",
+    "io.spray" %% "spray-json" % sprayJsonVersion,
     "org.scalatest" %% "scalatest" % "3.2.14" % Test
   )
 }
