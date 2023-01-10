@@ -5,6 +5,7 @@ import org.scalatest.matchers.should.Matchers
 
 class SprayJsonTest extends AnyFunSuite with Matchers:
   test("spray json") {
+    import SprayJsonCodecs.*
     import SprayJsonCodecs.given
     import spray.json.*
 
@@ -16,8 +17,8 @@ class SprayJsonTest extends AnyFunSuite with Matchers:
     println(s"spray json employee json: $employeeJson")
 
     val person = employee.asInstanceOf[Person]
-    val personJson = SprayJsonCodecs.write(person)
-    person shouldBe SprayJsonCodecs.read(personJson)
+    val personJson = person.toJson
+    person shouldBe personJson.convertTo[Person]
 
     println(s"spray json person: $person")
     println(s"spray json person json: $personJson")
