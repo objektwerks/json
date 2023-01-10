@@ -3,10 +3,9 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-import upickle.default.*
-
 class UPickleTest extends AnyFunSuite with Matchers:
   test("upickle") {
+    import upickle.default.*
     import UPickleCodecs.given
 
     println("\n*** UPickle")
