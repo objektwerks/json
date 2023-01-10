@@ -5,8 +5,8 @@ import org.scalatest.matchers.should.Matchers
 
 class SprayJsonTest extends AnyFunSuite with Matchers:
   test("spray json") {
-    import SprayJsonCodecs.given
     import spray.json.*
+    import SprayJsonCodecs.given
 
     println("\n*** Spray Json")
 
