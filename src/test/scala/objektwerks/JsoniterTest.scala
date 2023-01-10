@@ -21,5 +21,4 @@ class JsoniterTest extends AnyFunSuite with Matchers:
 
     println(s"jsoniter person: $person")
     println(s"jsoniter person json: $personJson")
-    println("*** Jsoniter\n")
   }

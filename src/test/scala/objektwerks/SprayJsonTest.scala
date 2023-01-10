@@ -21,5 +21,4 @@ class SprayJsonTest extends AnyFunSuite with Matchers:
 
     println(s"spray json person: $person")
     println(s"spray json person json: $personJson")
-    println("*** Spray Json\n")
   }

@@ -21,5 +21,4 @@ class UPickleTest extends AnyFunSuite with Matchers:
 
     println(s"upickle person: $person")
     println(s"upickle person json: $personJson")
-    println("*** UPickle\n")
   }

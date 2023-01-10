@@ -21,5 +21,4 @@ class ZioJsonTest extends AnyFunSuite with Matchers:
 
     println(s"zio person: $person")
     println(s"zio person json: $personJson")
-    println("*** ZIO Json\n")
   }

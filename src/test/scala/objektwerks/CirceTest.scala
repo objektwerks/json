@@ -21,5 +21,4 @@ class CirceTest extends AnyFunSuite with Matchers:
 
     println(s"circe person: $person")
     println(s"circe person json: $personJson")
-    println("*** Circe\n")
   }
