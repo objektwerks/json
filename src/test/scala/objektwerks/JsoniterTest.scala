@@ -8,6 +8,8 @@ class JsoniterTest extends AnyFunSuite with Matchers:
     import com.github.plokhotnyuk.jsoniter_scala.core.*
     import JsoniterCodecs.given
 
+    println("\n*** Jsoniter")
+
     val employee = Employees.newEmployee
     val employeeJson = writeToString[Employee](employee)
     employee shouldBe readFromString[Employee](employeeJson)
