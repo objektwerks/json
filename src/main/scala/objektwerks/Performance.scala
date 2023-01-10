@@ -23,7 +23,7 @@ class Performance:
   @Benchmark
   def jsoniterBenchmark(): Unit =
     import com.github.plokhotnyuk.jsoniter_scala.core.*
-    import JsoniterCodecs.*
+    import JsoniterCodecs.given
 
     val employee = Employees.newEmployee
     val employeeJson = writeToString[Employee](employee)

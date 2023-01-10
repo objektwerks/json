@@ -7,7 +7,7 @@ import org.scalatest.matchers.should.Matchers
 
 class JsoniterTest extends AnyFunSuite with Matchers:
   test("jsoniter") {
-    import JsoniterCodecs._
+    import JsoniterCodecs.given
 
     val employee = Employees.newEmployee
     val employeeJson = writeToString[Employee](employee)
