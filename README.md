@@ -6,6 +6,7 @@ Scala 3 Json
 3. uPickle
 4. ZioJson
 5. Spray-Json ( readded on 2022.12.4 )
+>Note, Spray-Json does not provide a type discriminator!
 
 Test
 ----
