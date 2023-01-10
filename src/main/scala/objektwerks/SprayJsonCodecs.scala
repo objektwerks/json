@@ -9,14 +9,8 @@ object SprayJsonCodecs extends DefaultJsonProtocol:
 
   given personFormat: RootJsonFormat[Person] = new RootJsonFormat[Person] {
     def write(person: Person): JsValue =
-      JsObject((person match {
+      person match
         case employee: Employee => employee.toJson
-        case null => deserializationError(s"json write error on Person.")
-      }).asJsObject.fields)
 
-    def read(json: JsValue): Employee =
-      json.asJsObject.getFields("id", "name") match {
-        case Seq(JsString("employee")) => json.convertTo[Employee]
-        case _ => serializationError(s"json read error on Person.")
-      }
+    def read(json: JsValue): Person = json.convertTo[Employee]
   }
