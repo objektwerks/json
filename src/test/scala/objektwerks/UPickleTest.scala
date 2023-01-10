@@ -8,8 +8,6 @@ class UPickleTest extends AnyFunSuite with Matchers:
     import upickle.default.*
     import UPickleCodecs.given
 
-    println("\n*** UPickle")
-
     val employee = Employees.newEmployee
     val employeeJson = write(employee)
     employee shouldBe read[Employee](employeeJson)
@@ -23,4 +21,5 @@ class UPickleTest extends AnyFunSuite with Matchers:
 
     println(s"upickle person: $person")
     println(s"upickle person json: $personJson")
+    println("*** UPickle\n")
   }
