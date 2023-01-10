@@ -8,6 +8,8 @@ class SprayJsonTest extends AnyFunSuite with Matchers:
     import SprayJsonCodecs.given
     import spray.json.*
 
+    println("\n*** Spray Json")
+
     val employee = Employees.newEmployee
     val employeeJson = employee.toJson
     employee shouldBe employeeJson.convertTo[Employee]
