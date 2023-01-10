@@ -8,8 +8,6 @@ class CirceTest extends AnyFunSuite with Matchers:
     import io.circe.generic.auto.*
     import io.circe.syntax.*
 
-    println("\n*** Circe")
-
     val employee = Employees.newEmployee
     val employeeJson = employee.asJson
     employee shouldBe employeeJson.as[Employee].toOption.get
@@ -23,4 +21,5 @@ class CirceTest extends AnyFunSuite with Matchers:
 
     println(s"circe person: $person")
     println(s"circe person json: $personJson")
+    println("*** Circe\n")
   }
