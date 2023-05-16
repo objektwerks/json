@@ -22,3 +22,6 @@ libraryDependencies ++= {
   )
 }
 parallelExecution := false
+scalacOptions ++= Seq(
+  "-Wunused:all"
+)
