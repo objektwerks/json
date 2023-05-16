@@ -1,10 +1,8 @@
 package objektwerks
 
-import spray.json.DefaultJsonProtocol
+import spray.json.*
 
 object SprayJsonCodecs extends DefaultJsonProtocol:
-  import spray.json.*
-
   given JsonFormat[Employee] = jsonFormat2(Employee.apply(_, _))
 
   given RootJsonFormat[Person] = new RootJsonFormat[Person] {
