@@ -20,11 +20,11 @@ Benchmark
 Results
 -------
 >OpenJDK Runtime Environment Zulu21.28+85-CA (build 21+35), **Scala 3.3.1**, Apple M1, 2020, 16GB
-1. spray-json - 0.068
-2. jsoniter - 0.139
-3. circe - 0.174
-4. zio-json - 0.330
-5. upickle - 0.406
+1. spray-json - 0.062
+2. jsoniter - 0.143
+3. circe - 0.175
+4. zio-json - 0.264
+5. upickle - 0.467
 >Total time: 1003 s (16:43), 10 warmups, 10 iterations, in microseconds, completed **2023.9.20**
 
 >OpenJDK Runtime Environment Zulu20.30+11-CA (build 20.0.1+9), **Scala 3.3.0**, Apple M1, 2020, 16GB
