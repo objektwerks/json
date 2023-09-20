@@ -1,6 +1,6 @@
 Scala 3 Json
 ------------
->Feature tests and performance benchmarks across **5** Scala 3 json libraries:
+>Feature tests and performance benchmarks against **5** Scala 3 json libraries:
 1. Circe
 2. Jsoniter
 3. uPickle
