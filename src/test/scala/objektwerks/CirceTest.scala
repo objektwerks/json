@@ -3,8 +3,8 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-class CirceTest extends AnyFunSuite with Matchers:
-  test("circe") {
+final class CirceTest extends AnyFunSuite with Matchers:
+  test("circe"):
     import io.circe.generic.auto.*
     import io.circe.syntax.*
 
@@ -21,4 +21,3 @@ class CirceTest extends AnyFunSuite with Matchers:
 
     println(s"circe person: $person")
     println(s"circe person json: $personJson")
-  }
