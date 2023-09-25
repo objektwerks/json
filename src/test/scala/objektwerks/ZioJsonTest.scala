@@ -3,8 +3,8 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-class ZioJsonTest extends AnyFunSuite with Matchers:
-  test("zio") {
+final class ZioJsonTest extends AnyFunSuite with Matchers:
+  test("zio"):
     import zio.json.*
     import ZioJsonCodecs.given
 
@@ -21,4 +21,3 @@ class ZioJsonTest extends AnyFunSuite with Matchers:
 
     println(s"zio person: $person")
     println(s"zio person json: $personJson")
-  }
