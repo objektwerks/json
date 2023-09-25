@@ -3,8 +3,8 @@ package objektwerks
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-class SprayJsonTest extends AnyFunSuite with Matchers:
-  test("spray json") {
+final class SprayJsonTest extends AnyFunSuite with Matchers:
+  test("spray json"):
     import spray.json.*
     import SprayJsonCodecs.given
 
@@ -21,4 +21,3 @@ class SprayJsonTest extends AnyFunSuite with Matchers:
 
     println(s"spray json person: $person")
     println(s"spray json person json: $personJson")
-  }
