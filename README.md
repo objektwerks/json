@@ -1,11 +1,12 @@
 Scala 3 Json
 ------------
->Feature tests and performance benchmarks against **5** Scala 3 json libraries:
+>Feature tests and performance benchmarks against **6** Scala 3 json libraries:
 1. Circe
 2. Jsoniter
 3. uPickle
 4. Zio-Json
 5. Spray-Json ( readded on 2022.12.4 )
+6. Borer ( readded 2023.11.26 )
 >**Note**, Spray-Json ***does not*** provide a ***type discriminator***!
 
 Test
