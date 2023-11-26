@@ -5,12 +5,15 @@ organization := "objektwerks"
 version := "0.1-SNAPSHOT"
 scalaVersion := "3.3.1"
 libraryDependencies ++= {
+  val borerVersion = "1.12.0"
   val circeVersion = "0.14.5"
   val jsoniterVersion = "2.24.4"
   val upickleVersion = "3.1.3"
   val zioJsonVersion = "0.6.2"
   val sprayJsonVersion = "1.3.6"
   Seq(
+    "io.bullet" %% "borer-core" % borerVersion,
+    "io.bullet" %% "borer-derivation" % borerVersion,
     "io.circe" %% "circe-parser" % circeVersion,
     "io.circe" %% "circe-generic" % circeVersion,
     "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-core" % jsoniterVersion,
