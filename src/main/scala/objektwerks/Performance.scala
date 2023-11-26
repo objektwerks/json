@@ -12,6 +12,16 @@ import org.openjdk.jmh.annotations.*
 @Fork(1)
 class Performance:
   @Benchmark
+  def borerBenchmark(): Unit =
+    import io.bullet.borer.Json
+    import io.bullet.borer.derivation.MapBasedCodecs.*
+    import BorerCodecs.given
+
+    val employee = Employees.newEmployee
+    val employeeJson = Json.encode(employee).toUtf8String
+    assert( employee == Json.decode(employeeJson.getBytes("UTF8")).to[Employee].value )
+
+  @Benchmark
   def circeBenchmark(): Unit =
     import io.circe.generic.auto.*
     import io.circe.syntax.*
