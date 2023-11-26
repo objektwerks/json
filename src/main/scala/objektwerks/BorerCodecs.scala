@@ -4,4 +4,6 @@ import io.bullet.borer.Codec
 import io.bullet.borer.derivation.MapBasedCodecs.*
 
 object BorerCodecs:
-  given Codec[Person] = deriveAllCodecs[Person]
+  given Codec[Person] =
+    given Codec[Employee]  = deriveCodec[Employee]
+    deriveCodec[Person]
