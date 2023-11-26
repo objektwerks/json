@@ -53,13 +53,14 @@ class Performance:
     employee
 
   @Benchmark
-  def zioJsonBenchmark(): Unit =
+  def zioJsonBenchmark(): Employee =
     import zio.json.*
     import ZioJsonCodecs.given
 
     val employee = Employees.newEmployee
     val employeeJson = employee.toJson
     assert( employee == employeeJson.fromJson[Employee].toOption.get )
+    employee
 
   @Benchmark
   def sprayJsonBenchmark(): Unit =
