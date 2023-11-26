@@ -63,10 +63,11 @@ class Performance:
     employee
 
   @Benchmark
-  def sprayJsonBenchmark(): Unit =
+  def sprayJsonBenchmark(): Employee =
     import spray.json.*
     import SprayJsonCodecs.given
 
     val employee = Employees.newEmployee
     val employeeJson = employee.toJson
     assert( employee == employeeJson.convertTo[Employee] )
+    employee
