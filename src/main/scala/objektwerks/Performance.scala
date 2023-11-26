@@ -23,13 +23,14 @@ class Performance:
     employee
 
   @Benchmark
-  def circeBenchmark(): Unit =
+  def circeBenchmark(): Employee =
     import io.circe.generic.auto.*
     import io.circe.syntax.*
 
     val employee = Employees.newEmployee
     val employeeJson = employee.asJson
     assert( employee == employeeJson.as[Employee].toOption.get )
+    employee
 
   @Benchmark
   def jsoniterBenchmark(): Unit =
