@@ -43,13 +43,14 @@ class Performance:
     employee
 
   @Benchmark
-  def upickleBenchmark(): Unit =
+  def upickleBenchmark(): Employee =
     import upickle.default.*
     import UPickleCodecs.given
 
     val employee = Employees.newEmployee
     val employeeJson = write(employee)
     assert( employee == read[Employee](employeeJson) )
+    employee
 
   @Benchmark
   def zioJsonBenchmark(): Unit =
