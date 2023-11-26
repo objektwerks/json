@@ -33,13 +33,14 @@ class Performance:
     employee
 
   @Benchmark
-  def jsoniterBenchmark(): Unit =
+  def jsoniterBenchmark(): Employee =
     import com.github.plokhotnyuk.jsoniter_scala.core.*
     import JsoniterCodecs.given
 
     val employee = Employees.newEmployee
     val employeeJson = writeToString[Employee](employee)
     assert( employee == readFromString[Employee](employeeJson) )
+    employee
 
   @Benchmark
   def upickleBenchmark(): Unit =
