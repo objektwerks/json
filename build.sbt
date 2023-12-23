@@ -3,7 +3,7 @@ enablePlugins(JmhPlugin)
 name := "scala3.json"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "3.3.2-RC1"
+scalaVersion := "3.4.0-RC1"
 libraryDependencies ++= {
   val borerVersion = "1.12.0"
   val circeVersion = "0.14.6"
