@@ -21,7 +21,7 @@ libraryDependencies ++= {
     "com.lihaoyi" %% "upickle" % upickleVersion,
     "dev.zio" %% "zio-json" % zioJsonVersion,
     "io.spray" %% "spray-json" % sprayJsonVersion,
-    "org.scalatest" %% "scalatest" % "3.2.17" % Test
+    "org.scalatest" %% "scalatest" % "3.2.18" % Test
   )
 }
 parallelExecution := false
