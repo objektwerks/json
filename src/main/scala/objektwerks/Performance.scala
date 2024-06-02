@@ -14,7 +14,6 @@ class Performance:
   @Benchmark
   def borerBenchmark(): Employee =
     import io.bullet.borer.Json
-    import io.bullet.borer.derivation.MapBasedCodecs.*
     import BorerCodecs.given
 
     val employee = Employees.newEmployee
