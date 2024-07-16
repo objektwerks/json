@@ -23,7 +23,7 @@ Results
 >OpenJDK Runtime Environment Zulu22.30+13-CA (build 22.0.1+8), **Scala 3.5.0-RC4**, Apple M1, 2020, 16GB
 1. spray-json - 0.51
 2. jsoniter - 0.127
-3. circe - 0.0
+3. circe - 0.182
 4. borer - 0.0
 5. zio-json - 0.0
 6. upickle - 0.0
