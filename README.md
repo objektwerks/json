@@ -1,5 +1,5 @@
-Scala 3 Json
-------------
+Json
+----
 >Feature tests and performance benchmarks against **6** Scala 3 json libraries:
 1. Circe
 2. Jsoniter
