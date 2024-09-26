@@ -26,7 +26,7 @@ Results
 3. circe - 0.176
 4. borer - 0.197
 5. zio-json - 0.245
-6. upickle - 0.424
+6. upickle - 0.396
 >Total time: 1206 s (20:06), 10 warmups, 10 iterations, average time in microseconds, completed **2024.9.26**
 
 >OpenJDK Runtime Environment Zulu22.30+13-CA (build 22.0.1+8), **Scala 3.5.0-RC4**, Apple M1, 2020, 16GB
