@@ -9,7 +9,7 @@ libraryDependencies ++= {
   val circeVersion = "0.14.10"
   val jsoniterVersion = "2.33.1"
   val upickleVersion = "4.1.0"
-  val zioJsonVersion = "0.7.5"
+  val zioJsonVersion = "0.7.6"
   val sprayJsonVersion = "1.3.6"
   Seq(
     "io.bullet" %% "borer-core" % borerVersion,
