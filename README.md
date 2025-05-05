@@ -20,6 +20,8 @@ Benchmark
 
 Results
 -------
+>OpenJDK Runtime Environment Zulu24.28+85-CA (build 24+36), **Scala 3.7.0-RC4**, Apple M1, 16GB
+
 >OpenJDK Runtime Environment Zulu23.28+85-CA (build 23+37), **Scala 3.5.1**, Apple M1, 2020, 16GB
 1. spray-json - 0.051
 2. jsoniter - 0.123
