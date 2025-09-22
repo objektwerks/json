@@ -25,7 +25,7 @@ Results
 2. jsoniter - 0.126
 3. zio-json - 0.134
 4. circe - 0.182
-5. borer - 0.189
+5. borer - 0.184
 6. upickle - 0.463
 >Total time: 1204 s (20:04), 10 warmups, 10 iterations, average time in microseconds, completed **2025.9.22**
 
