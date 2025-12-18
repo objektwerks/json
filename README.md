@@ -24,7 +24,7 @@ Results
 1. spray-json - 0.056
 2. jsoniter - 0.126
 3. zio-json - 0.134
-4. circe - 0.182
+4. circe - 0.166
 5. borer - 0.184
 6. upickle - 0.447
 >Total time: 1204 s (20:04), 10 warmups, 10 iterations, average time in microseconds, completed **2025.12.18**
